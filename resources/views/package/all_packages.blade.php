@@ -49,7 +49,7 @@
 
         @else
 
-            <div class="col-md-2 sortby-box wow flipInY animated margin30" style="width:21.666667%">
+            <div class="col-md-2 sortby-box wow flipInY animated margin30" style="width:21.666667%" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: flipInY;" data-wow-duration="1000ms" data-wow-delay="300ms">
                 <div class="col-md-12">
                     <h2>Price</h2>
                 </div>
@@ -74,7 +74,7 @@
 
                         <div class="col-md-5 package-information">
                             <h3>{{ $package->name }}</h3>
-                            <?php echo mb_substr($package->information, 0, 437).'...'; ?>
+                            <span><?php echo mb_substr($package->information, 0, 437).'...'; ?></span>
                         </div>
 
                         <div class="col-md-3 search-package-last-column">
@@ -139,7 +139,7 @@
                     
                         html+= '<div class="col-md-4 no-padding"><img src="'+site_url+'/Packages/'+value.image+'" class="package-list-image"></div>';
 
-                        html+= '<div class="col-md-5 package-information"><h3>'+ value.name +' </h3> '+value.information.substring(1, 437)+'...'+'</div>';
+                        html+= '<div class="col-md-5 package-information"><h3>'+ value.name +' </h3> <span>'+value.information.substring(0, 437)+'...'+'</span></div>';
 
                         html+= '<div class="col-md-3 search-package-last-column"><div class="col-md-12 package-price text-center">';
                         

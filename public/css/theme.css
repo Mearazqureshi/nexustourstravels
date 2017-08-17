@@ -4676,5 +4676,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     width: 21% !important
 }
 
+.package-information span{
+    font-size: 15px !important;
+}
+
+#packages_list{
+    font-size: 0px;
+}
+
 
 
