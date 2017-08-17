@@ -1,7 +1,7 @@
 <div class="carousel-inner">
 
    <div class="item active">
-      <img src=<?php echo public_path().'/Packages/'.$package->image; ?> width="100%">
+      <img src=<?php echo public_path().'/Packages/'.$package->image; ?> width="100%" >
     </div>
 
 </div>
