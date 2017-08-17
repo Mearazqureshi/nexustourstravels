@@ -42,11 +42,11 @@
                     @endif
 
                     <div class="col-md-12">
-                        <div class="col-md-6 no-padding">
+                        <div class="width50 no-padding">
                             <input type="checkbox" class="checkbox"> <label class="remember-me">Remember Me</label> 
                         </div>
 
-                        <div class="col-md-6 no-padding right forget-password">
+                        <div class="width50 no-padding right forget-password">
                             <a href="{{ url('forget-password') }}" class="col-md-12 no-padding"> Forget your password ? </a>
                         </div> 
                     </div>         

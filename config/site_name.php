@@ -2,5 +2,5 @@
 
     return [
 
-        'name' => 'Nexus tours & travels',
+        'name' => 'Nexus tours travels',
     ];

@@ -570,11 +570,32 @@ a:hover{
         width: 100%;
         font-size: 15px !important;
     }
+
+    .sortby-box{
+        float: left !important;
+        width: 75% !important;
+        margin-right: 50px !important;
+    }
+
+    .width75{
+        float: left !important;
+        width: 75% !important;
+    }
 }
 
 @media screen and (max-width: 520px) and (min-width: 80px) {
     .rating{
         font-size: 15px !important;
+    }
+
+    .sortby-box{
+        float: left !important;
+        width: 75% !important;
+    }
+
+    .width75{
+        float: left !important;
+        width: 75% !important;
     }
 
     .package-price span, .package-price i{
@@ -695,7 +716,7 @@ a:hover{
     }
 
     .login-page{
-        z-index: 99999;
+        /*z-index: 99999;*/
     }
 
     .package-price{
@@ -4624,5 +4645,36 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .search-package-last-column p{
     margin-top: 20px;
 }
+
+
+.width50{
+    width: 50%;
+    float: left;
+}
+
+.sortby-box{
+    float: right !important;
+    height: 100%;
+    background-color: #e6e6e6;
+    margin-left: 36px;
+    width: 21%;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 0px;
+    padding-bottom: 30px;
+    font-size: 17px;
+}
+
+.sortby-box h2{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #d6cfcf;
+}
+
+.width21{
+    width: 21% !important
+}
+
 
 

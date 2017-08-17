@@ -43,8 +43,10 @@ class PackageController extends Controller
 
     public function index(Request $request)
     {
-        $data['packages'] = Package::where('from',$request->from)->where('to',$request->to)->get();
+        $data['packages'] = Package::where('from',$request->from)->where('to',$request->to)->orderBy('rate','DESC')->paginate(Config::get('user_side.package_list'));;
         $data['packages_count'] = Package::where('from',$request->from)->where('to',$request->to)->count();
+        $data['from'] = $request->from;
+        $data['to'] = $request->to;
 
         return view('package.index',$data);
     }
@@ -199,6 +201,22 @@ class PackageController extends Controller
         Session::flash('flash_success','Your request has been sent. We will response you.');
         return redirect()->back();    
 
+    }
+
+
+    public function sortAllPackages(Request $request)
+    {
+        $data['packages'] = Package::orderBy('price',$request->sort_by)->orderBy('rate','DESC')->paginate(Config::get('user_side.package_list'));
+
+        return $data['packages'];
+    }
+
+
+    public function sortPackages(Request $request)
+    {
+        $data['packages'] = Package::where('from',$request->from)->where('to',$request->to)->orderBy('price',$request->sort_by)->orderBy('rate','DESC')->paginate(Config::get('user_side.package_list'));
+
+        return $data['packages'];
     }
 
 }

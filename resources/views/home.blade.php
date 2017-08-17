@@ -55,6 +55,7 @@
             </div>
 
             <!-- Corosol image -->
+            @if(isset($packages[0]))
                 <article id="demo-default" class="demo">
 
                     <h2>Our Packages</h2>
@@ -145,6 +146,7 @@
                     </div>
               </article>
             <!-- End corosol -->
+            @endif
 
     <!-- Search Button -->
       <div class="col-md-12">
@@ -163,7 +165,7 @@
         <div class="col-md-12 review">
             @foreach($reviews as $review)
                 <div class="col-md-12 margin15">
-                    <h4><img src="{{ url('images/user.png') }}" class="review-image"> {{ $review->name }} ( {{ $review->email }} )</h4>
+                    <h4><img src="{{ url('images/user.png') }}" class="review-image"> {{ $review->name }}</h4>
                     <div class="review-border">{{ $review->review }}</div>
                 </div>
             @endforeach
