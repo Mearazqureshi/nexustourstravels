@@ -572,9 +572,8 @@ a:hover{
     }
 
     .sortby-box{
-        float: left !important;
-        width: 75% !important;
-        margin-right: 50px !important;
+        width: 90.666667% !important;
+        margin-right: 20px !important;
     }
 
     .width75{
@@ -598,8 +597,7 @@ a:hover{
     }
 
     .sortby-box{
-        float: left !important;
-        width: 75% !important;
+        width: 90.666667% !important;
     }
 
     .width75{

@@ -138,7 +138,7 @@
                 
                     $.each( data.data, function( key, value ) {
 
-                        html+= '<div class="col-md-9 package-item team-member wow flipInY animated" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: flipInY;" data-wow-duration="1000ms" data-wow-delay="300ms">';
+                        html+= '<div class="col-md-9 margin190 package-item team-member wow flipInY animated" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: flipInY;" data-wow-duration="1000ms" data-wow-delay="300ms">';
                     
                         html+= '<div class="col-md-4 no-padding"><img src="'+site_url+'/Packages/'+value.image+'" class="package-list-image"></div>';
 
