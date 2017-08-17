@@ -581,11 +581,20 @@ a:hover{
         float: left !important;
         width: 75% !important;
     }
+
+    .margin190{
+        margin-top: 190px !important;
+    }
+
 }
 
 @media screen and (max-width: 520px) and (min-width: 80px) {
     .rating{
         font-size: 15px !important;
+    }
+
+    .margin190{
+        margin-top: 190px !important;
     }
 
     .sortby-box{
@@ -1033,7 +1042,7 @@ a:hover{
 }
 
 .package-item{
-    margin-top: 30px !important;
+    margin-top: 30px;
     border-radius: 5px;
     background-color: rgba(0,0,0,0.1);
 }
@@ -4663,13 +4672,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     padding: 0px;
     padding-bottom: 30px;
     font-size: 17px;
+    z-index: 1;
+    border: 1px solid #c8c8c8;
 }
 
 .sortby-box h2{
     text-align: center;
     font-family: 'Raleway', sans-serif;
     padding-bottom: 5px;
-    border-bottom: 1px solid #d6cfcf;
+    margin: 0;
+    padding: 10px;
+    background-color: #c8c8c8;
+    border-radius: 5px;
+}
+
+.padding0{
+    padding: 0px !important;
 }
 
 .width21{
@@ -4682,6 +4700,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 #packages_list{
     font-size: 0px;
+}
+
+.padding10{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.padding5{
+    padding-top: 5px;
+    padding-bottom: 30px;
 }
 
 
