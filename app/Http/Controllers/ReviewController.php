@@ -36,13 +36,13 @@ class ReviewController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),[
-            'review' => 'required',
-        ]);  
-
         if(Auth::guest()){
             return redirect('login');
         }
+
+        $validator = Validator::make($request->all(),[
+            'review' => 'required',
+        ]);  
 
         if($validator->fails()){
 
