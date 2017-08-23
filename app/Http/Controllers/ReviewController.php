@@ -40,6 +40,10 @@ class ReviewController extends Controller
             'review' => 'required',
         ]);  
 
+        if(Auth::guest()){
+            return redirect('login');
+        }
+
         if($validator->fails()){
 
             return redirect()->back()
