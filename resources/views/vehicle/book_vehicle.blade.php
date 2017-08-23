@@ -4,6 +4,16 @@
 
 <div class="container">
     <div class="row">
+
+        <div class="col-md-12" style="margin-top:30px;">
+             @if(Session::has('flash_success'))
+                <div class="alert alert-success">
+                    <span class="glyphicon glyphicon-ok"></span>
+                    <em> {!! session('flash_success') !!}</em>
+                </div>
+             @endif
+        </div>
+
         <div class="col-md-12">
             <!-- <div class="margin70"></div> -->
 

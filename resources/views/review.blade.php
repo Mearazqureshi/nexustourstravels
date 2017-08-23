@@ -20,7 +20,7 @@
         <div class="col-md-12 review">
             @foreach($reviews as $review)
                 <div class="col-md-12 margin15">
-                    <h4><img src="{{ url('images/user.png') }}" class="review-image"> {{ $review->name }} ( {{ $review->email }} )</h4>
+                    <h4><img src="{{ url('images/user.png') }}" class="review-image"> {{ $review->name }}</h4>
                     <div class="review-border">{{ $review->review }}</div>
                 </div>
             @endforeach

@@ -15,6 +15,7 @@ use Mail;
 use Config;
 use App\WishPackage;
 use App\Rating;
+use Redirect;
 
 
 class PackageController extends Controller
@@ -81,9 +82,18 @@ class PackageController extends Controller
 
         }
 
+        return Redirect::route('show-book-package-page')->with(['package_id' => $request->package_id]);
+    }
+
+
+    public function showBookPackagePage()
+    {
+        $user_id = Auth::user()->id;
+        $package_id = Session::get('package_id');
+
         $data['user'] = User::where('id',$user_id)->first();
-        $data['package_id'] = $request->package_id;
-        $data['package'] = Package::where('id',$request->package_id)->first();
+        $data['package_id'] = $package_id;
+        $data['package'] = Package::where('id',$package_id)->first();
 
         return view('package.show_package_confirmation',$data);
     }
@@ -122,7 +132,7 @@ class PackageController extends Controller
                             ]);
 
         Session::flash('flash_success','Your request has been sent. we will response you by email');
-        return redirect()->back();
+        return redirect('all-packages');
 
     }
 

@@ -135,3 +135,5 @@ Route::post('sort_all_packages','PackageController@sortAllPackages');
 
 Route::post('sort_packages','PackageController@sortPackages');
 
+Route::get('show-book-package-page','PackageController@showBookPackagePage')->name('show-book-package-page');;
+

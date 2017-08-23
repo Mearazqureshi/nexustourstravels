@@ -81,8 +81,8 @@ class VehicleController extends Controller
                              'total' => $total
                             ]);
 
-        Session::flash('flash_success','Your request has been sent. we will response you by email');
-        return redirect('vehicle-list');
+        Session::flash('flash_success','Your request has been sent to our team. we will response you by email');
+        return back();
 
     }
 

@@ -592,6 +592,12 @@ a:hover{
         font-size: 15px !important;
     }
 
+    .profile-image{
+        width: 100%;
+        border: 2px solid #f0f0f0;
+        padding: 5px;
+    }
+
     .margin190{
         margin-top: 190px !important;
     }
@@ -4506,7 +4512,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .date-icon{
     position: relative;
-    z-index: 9999;
+    z-index: 2;
     padding: 12px;
 }
 

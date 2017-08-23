@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="col-md-12 btn-package">
-                        <a href="{{ url('book-vehicle',$vehicle->id) }}"><button class="btn btn-primary btn-show-package">Book Vehicle</button></a>
+                        <a href="{{ url('book-vehicle',$vehicle->id) }}"><button class="btn btn-primary btn-show-package">Show Vehicle</button></a>
                     </div>
 
                 </div>

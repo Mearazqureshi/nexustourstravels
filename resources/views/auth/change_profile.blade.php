@@ -22,7 +22,7 @@
             <div class="">
 
                  <div class="col-md-2 col-sm-3 col-xs-12">
-                    <img src="{{ url('images/user.png') }}" class="col-md-12">
+                    <img src="{{ url('images/user.png') }}" class="profile-image col-md-12">
                 </div>
                 
                 <div class="col-md-9">

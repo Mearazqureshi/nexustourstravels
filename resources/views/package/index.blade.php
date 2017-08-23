@@ -40,6 +40,15 @@
 <div class="container">
     <div class="row">
 
+        <div class="col-md-12" style="margin-top:30px;">
+            @if(Session::has('flash_success'))
+                <div class="alert alert-success">
+                    <span class="glyphicon glyphicon-ok"></span>
+                    <em> {!! session('flash_success') !!}</em>
+                </div>
+            @endif
+        </div>
+
         @if($packages_count == 0) 
                 <div class="col-md-12 no-package">
                     <div class="alert alert-danger" style="background-color: #a94442;border-color: #a94442;" role="alert">

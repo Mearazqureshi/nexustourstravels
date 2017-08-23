@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="col-md-9">
-                            <input class="textbox-controll form-control" type="text" name="source_city" value="{{ $package->from }}">
+                            <input class="textbox-controll form-control" type="text" name="source_city" value="{{ old('source_city') or $package->from }}">
                             @if($errors->first('source_city'))
                               <div class="validation-error">
                                 {{ $errors->first('source_city') }}
@@ -94,7 +94,7 @@
                         </div>
 
                         <div class="col-md-9">
-                            <input class="textbox-controll form-control" type="text" name="departure_city" value="{{ $package->to }}"> 
+                            <input class="textbox-controll form-control" type="text" name="departure_city" value="{{ old('departure_city') or $package->to }}"> 
                             @if($errors->first('departure_city'))
                               <div class="validation-error">
                                 {{ $errors->first('departure_city') }}
