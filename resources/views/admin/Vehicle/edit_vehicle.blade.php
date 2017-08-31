@@ -26,7 +26,7 @@
               <div class="clearfix"></div>
               </div>
           <div class="x_content">
-              <form method="post" action="{{ url('admin/vehicle/update',$vehicle->id) }}" enctype="multipart/form-data">
+              <form method="post" action="{{ url('admin/Vehicle/update',$vehicle->id) }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                   <div class="form-group">
 
