@@ -50,9 +50,9 @@
         </div>
 
         @if($packages_count == 0) 
-                <div class="col-md-12 no-package">
+                <div class="col-md-12" style="padding-bottom:400px;">
                     <div class="alert alert-danger" style="background-color: #a94442;border-color: #a94442;" role="alert">
-                        <a class="alert-link" style="color:#fff;font-size:16px;">No package found.</a>
+                        <a class="alert-link" style="color:#fff;font-size:16px;">No package found. If you are not getting proper package you can wish for it. <a style="color:red" href="{{ url('wish-package') }}">( Click here.. )</a></a>
                     </div>
                 </div>
 
