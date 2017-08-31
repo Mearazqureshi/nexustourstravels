@@ -26,7 +26,7 @@
               <div class="clearfix"></div>
               </div>
           <div class="x_content">
-              <form method="post" action="{{ url('admin/Vehicle/update',$vehicle->id) }}" enctype="multipart/form-data">
+              <form method="post" action="{{ url('admin/vehicle/update',$vehicle->id) }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                   <div class="form-group">
 
@@ -130,7 +130,7 @@
 
                       <label class="col-sm-2 control-label marginBottom10">Vehicle Image</label>
                       <div class="col-sm-10">
-                          <img class="marginBottom10" src="{{ url('vehicles/'.$vehicle->image) }}" height="200" width="500">
+                          <img class="marginBottom10" src="{{ url('Vehicles/'.$vehicle->image) }}" height="200" width="500">
                           <input type="file" name="image" class="form-control marginBottom10">
                          
                       </div>
