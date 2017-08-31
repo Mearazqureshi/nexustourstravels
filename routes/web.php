@@ -76,7 +76,7 @@ Route::get('admin/book_vehicles/list','Admin\VehicleController@bookVehicleList')
 
 Route::get('admin/book_packages/list','Admin\PackageController@bookPackageList')->middleware('is_admin');
 
-Route::post('search-vehicle','VehicleController@searchPackage');
+Route::post('search-vehicle','VehicleController@searchVehicle');
 
 Route::post('book-package','PackageController@bookPackage')->middleware('auth');
 
@@ -136,4 +136,8 @@ Route::post('sort_all_packages','PackageController@sortAllPackages');
 Route::post('sort_packages','PackageController@sortPackages');
 
 Route::get('show-book-package-page','PackageController@showBookPackagePage')->name('show-book-package-page');;
+
+Route::get('vehicle_orders','VehicleController@showOrderVehicles');
+
+Route::get('vehicle_fail_orders','VehicleController@showFailOrderVehicles');
 

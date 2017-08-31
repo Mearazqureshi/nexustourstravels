@@ -34,11 +34,6 @@
 
 
     <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <!-- <script src="{{ asset('js/animation.js') }}"></script>
-    <!--<script src="{{ asset('js/jquery-1.9.1.min.js') }}"></script>
-    --><script src="{{ asset('js/jquery.flipster.min.js') }}"></script>
-    <!-- <script src="{{ asset('js/app.js') }}"></script>  -->
-    <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 </head>

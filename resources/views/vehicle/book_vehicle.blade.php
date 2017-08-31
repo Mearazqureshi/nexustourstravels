@@ -219,20 +219,23 @@
 
 <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
 <script>
-
+$(document).ready(function(){
     var rent_per_km = "{{ $vehicle->rent_per_km }}";
     var basic_rent = "{{ $vehicle->basic_rent }}";
-    
+    var disabled_dates = '{!! $booked_vehicle !!}';
+
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',
-        startDate: '-d'
+        startDate: '-d',
+        datesDisabled: disabled_dates,
     });
 
     $('#km').change(function(){
-        var total = basic_rent*rent_per_km;
+        var km = $('#km').val();
+        var total = parseInt(basic_rent)+(rent_per_km*km);
         $('#total').val(total);
     });
-
+});
 </script>
 
 @endsection
