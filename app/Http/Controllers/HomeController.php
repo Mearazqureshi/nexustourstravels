@@ -71,15 +71,15 @@ class HomeController extends Controller
         $data['name'] = $request->name;
         $data['email'] = $request->email;
         $data['subject'] = $request->subject;
-        $data['message'] = $request->message;
+        $data['content'] = $request->message;
 
-        Mail::send('emails.contact_us', ['name' => $data['name'],'email' => $data['email'],'subject' => $data['subject'],'message' => $data['message'] ], function ($m) use ($data) {
+        Mail::send('emails.contact_us', $data, function ($m){
             $m->from(env('MAIL_USERNAME'), config('site_name.name'));
 
-            $m->to($data['user']->email)
+            $m->to(env('MAIL_USERNAME'))->subject('Contact us');
 
-            ->subject('Contact us');
-        }); 
+            
+        });
 
         Session::flash('success_msg','Your message has been sent to our team.');
         return back();

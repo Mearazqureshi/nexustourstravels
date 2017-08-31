@@ -4655,10 +4655,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     color:#e74c3c;
 }
 
-.search-package-last-column p{
+.search-package-last-column span{
     margin-top: 20px;
 }
-
 
 .width50{
     width: 50%;

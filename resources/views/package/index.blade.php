@@ -90,7 +90,7 @@
                             <div class="col-md-12 package-price text-center">
                                 @if($package->rate != 0)
                                     <div class="col-md-12">
-                                        <p><b>Rating : </b>{{ $package->rate }}</p>
+                                        <span class="rating-amount"><b>Rating :</b> {{ $package->rate }}</span>
                                         <div class="star-ratings-css">
                                           <div class="star-ratings-css-top" style="width:{{ $package->rate*100/5 }}%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                                           <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
