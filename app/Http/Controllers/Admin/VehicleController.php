@@ -107,26 +107,28 @@ class VehicleController extends Controller
 
         $data = array();
 
+        $data = [
+            'name' => $request->name,
+            'type' => $request->type,
+            'no_of_seats' => $request->no_of_seats,
+            'basic_rent' => $request->basic_rent,
+            'rent_per_km' => $request->rent_per_km,
+            'category' => $request->category,
+            'facilities' => $request->facilities
+        ];
+
         if($request->image){
             $file = Input::file('image');               
-            $destinationPath = public_path() .'/Packages';
+            $destinationPath = public_path() .'/Vehicles';
             $extension = $file->getClientOriginalExtension();
             $fileName = str_random(40) . '.' . $extension;
             $upload_success = $file->move($destinationPath, $fileName); 
 
-            array_push($data, $fileName);
+            //array_push($data, $fileName);
+            $image = ['image' => $fileName];
+            $data = array_merge($data,$image);
         }
-
-        $data = [
-                'name' => $request->name,
-                'type' => $request->type,
-                'no_of_seats' => $request->no_of_seats,
-                'basic_rent' => $request->basic_rent,
-                'rent_per_km' => $request->rent_per_km,
-                'category' => $request->category,
-                'facilities' => $request->facilities
-                ];
-
+        
         Vehicle::where('id',$vehicle_id)->update($data);
 
         Session::flash('success_msg', 'Vehicle updates Successfully..!');
