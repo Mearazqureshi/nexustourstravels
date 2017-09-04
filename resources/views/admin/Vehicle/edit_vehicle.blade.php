@@ -130,7 +130,7 @@
 
                       <label class="col-sm-2 control-label marginBottom10">Vehicle Image</label>
                       <div class="col-sm-10">
-                          <img class="marginBottom10" src="{{ url('Vehicles/'.$vehicle->image) }}" height="200" width="500">
+                          <img class="marginBottom10" src="{{ url('vehicles/'.$vehicle->image) }}" height="200" width="500">
                           <input type="file" name="image" class="form-control marginBottom10">
                          
                       </div>
