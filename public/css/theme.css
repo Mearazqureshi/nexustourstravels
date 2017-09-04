@@ -4615,6 +4615,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .vehicle-image{
+    width: 100%;
     max-width: 100%;
     height: auto;
 }

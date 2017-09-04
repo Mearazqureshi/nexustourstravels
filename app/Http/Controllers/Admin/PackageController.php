@@ -137,18 +137,6 @@ class PackageController extends Controller
                     ->withInput();
         }
 
-        $data = array();
-
-        if($request->image){
-            $file = Input::file('image');               
-            $destinationPath = public_path() .'/Packages';
-            $extension = pathinfo($photo, PATHINFO_EXTENSION); 
-            $fileName = str_random(40) . '.' . $extension;
-            $upload_success = $file->move($destinationPath, $fileName); 
-
-            array_push($data, $fileName);
-        }
-
         $data = [
                 'name' => $request->name,
                 'no_of_days' => $request->no_of_days,
@@ -156,7 +144,18 @@ class PackageController extends Controller
                 'information' => $request->information,
                 'city' => $request->city,
                 'rank' => $request->rank
-                ];
+        ];
+
+        if($request->image){
+            $file = Input::file('image');               
+            $destinationPath = public_path() .'/Packages';
+            $extension = pathinfo($file, PATHINFO_EXTENSION); 
+            $fileName = str_random(40) . '.' . $extension;
+            $upload_success = $file->move($destinationPath, $fileName); 
+
+            $image = ['image' => $fileName];
+            $data = array_merge($data,$image);
+        }
 
         Package::where('rank',$request->rank)->update(['rank' => 0]);
 

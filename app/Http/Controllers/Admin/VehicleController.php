@@ -105,8 +105,6 @@ class VehicleController extends Controller
                     ->withInput();
         }
 
-        $data = array();
-
         $data = [
             'name' => $request->name,
             'type' => $request->type,
@@ -123,8 +121,7 @@ class VehicleController extends Controller
             $extension = $file->getClientOriginalExtension();
             $fileName = str_random(40) . '.' . $extension;
             $upload_success = $file->move($destinationPath, $fileName); 
-
-            //array_push($data, $fileName);
+            
             $image = ['image' => $fileName];
             $data = array_merge($data,$image);
         }
