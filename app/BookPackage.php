@@ -15,7 +15,7 @@ class BookPackage extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'package_id','user_id','source_city','departure_city','contact_no','no_of_person','total','journey_date'
+        'package_id','user_id','source_city','departure_city','contact_no','no_of_person','total','journey_date','status','payment_status'
     ];
 
 

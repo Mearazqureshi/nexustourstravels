@@ -4,10 +4,15 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="Tours and travels is one of the best travels site and one of the best site to hire a vehicles in bhuj as well as hire vehicles in gujarat.">
-<meta name="keywords" content="Car hire in bhuj,Vehicles hire in bhuj,car hire in gujarat vehicles hire in gujarat,Holidays in bhuj, Advanture packages in bhuj,"/>
+<meta name="keywords" content="Car hire in bhuj,Vehicles hire in bhuj,car hire in gujarat vehicles hire in gujarat,Holidays in bhuj, Advanture vehicles in bhuj,"/>
 <meta name="description2" content="Find the best prices on Carhire car hire and read customer reviews. Book online today with the world's biggest online car rental service. Save on luxury, economy and family car hire."/>
 <meta name="keywords" content="car hire, cheap car hire, car rental uk,  rent a car, car rentals, uk car car, cheap car rentals spain, cheap car rental usa, carrentals, rent car, car hire comparison, carrental, carhire, compare car hire, car rental comparison, rentalcars, rental cars"/>
-
+<link href="{{ asset('css/rating.css') }}" rel="stylesheet">
+<style>
+body{
+  margin: 0px !important;
+}
+</style>
 <div class="fluid_container home-images">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
@@ -26,6 +31,11 @@
                   <h2 class="home-image-text">GREAT JOURNEY</h2>
                 </div>
 
+                <div class="item active">
+                  <img src="{{ asset('images/homebg.jpeg') }}" alt="Los Angeles" class="slideImage">
+                  <h2 class="home-image-text">GREAT JOURNEY</h2>
+                </div>
+
                 <div class="item">
                   <img src="{{ asset('images/photo-1496664232858-ae3480e5d308.jpg') }}" alt="Los Angeles" class="slideImage">
                   <h2 class="home-image-text">GREAT JOURNEY</h2>
@@ -36,7 +46,7 @@
                   <h2 class="home-image-text">GREAT JOURNEY</h2>
                 </div>
 
-                <div class="item active">
+                <div class="item ">
                   <img src="{{ asset('images/photo-1499678329028-101435549a4e.jpg') }}" alt="Los Angeles" class="slideImage">
                   <h2 class="home-image-text">GREAT JOURNEY</h2>
                 </div>
@@ -55,89 +65,89 @@
             </div>
 
             <!-- Corosol image -->
-            @if(isset($packages[0]))
+            @if(isset($vehicles[0]))
                 <article id="demo-default" class="demo">
 
-                    <h2>Our Packages</h2>
+                    <h2>Our vehicles</h2>
 
                     <div id="coverflow">
                         <ul class="flip-items">
-                          @if(isset($packages[0]))
-                            <a href="{{ url('show-package',$packages[0]->id) }}">
+                          @if(isset($vehicles[0]))
+                            <a href="{{ url('show-package',$vehicles[0]->id) }}">
                               <li data-flip-title="Red">
-                                  <img class="scroll-image" src="{{ url('Packages/',$packages[0]->image) }}">
+                                  <img class="scroll-image" src="{{ url('vehicles/',$vehicles[0]->image) }}">
                               </li>
                             </a>
                           @endif
 
-                          @if(isset($packages[1]))
-                            <a href="{{ url('show-package',$packages[1]->id) }}">
+                          @if(isset($vehicles[1]))
+                            <a href="{{ url('show-package',$vehicles[1]->id) }}">
                               <li data-flip-title="Razzmatazz" data-flip-category="Purples">
-                                  <img class="scroll-image" src="{{ url('Packages/',$packages[1]->image) }}">
+                                  <img class="scroll-image" src="{{ url('vehicles/',$vehicles[1]->image) }}">
                                </li>
                             </a>
                           @endif
 
-                          @if(isset($packages[2]))
-                            <a href="{{ url('show-package',$packages[2]->id) }}">
+                          @if(isset($vehicles[2]))
+                            <a href="{{ url('show-package',$vehicles[2]->id) }}">
                               <li data-flip-title="Deep Lilac" data-flip-category="Purples">
-                                  <img class="scroll-image" src="{{ url('Packages/',$packages[2]->image) }}">
+                                  <img class="scroll-image" src="{{ url('vehicles/',$vehicles[2]->image) }}">
                               </li>
                             </a>
                           @endif
 
-                          @if(isset($packages[3]))
-                            <a href="{{ url('show-package',$packages[3]->id) }}">
+                          @if(isset($vehicles[3]))
+                            <a href="{{ url('show-package',$vehicles[3]->id) }}">
                               <li data-flip-title="Daisy Bush" data-flip-category="Purples">
-                                  <img  class="scroll-image" src="{{ url('Packages/',$packages[3]->image) }}">
+                                  <img  class="scroll-image" src="{{ url('vehicles/',$vehicles[3]->image) }}">
                               </li>
                             </a>
                           @endif
 
-                          @if(isset($packages[4]))
-                            <a href="{{ url('show-package',$packages[4]->id) }}">
+                          @if(isset($vehicles[4]))
+                            <a href="{{ url('show-package',$vehicles[4]->id) }}">
                               <li data-flip-title="Cerulean Blue" data-flip-category="Blues">
-                                  <img class="scroll-image" src="{{ url('Packages/',$packages[4]->image) }}">
+                                  <img class="scroll-image" src="{{ url('vehicles/',$vehicles[4]->image) }}">
                               </li>
                             </a>
                           @endif
 
-                          @if(isset($packages[5]))
-                            <a href="{{ url('show-package',$packages[5]->id) }}">
+                          @if(isset($vehicles[5]))
+                            <a href="{{ url('show-package',$vehicles[5]->id) }}">
                               <li data-flip-title="Dodger Blue" data-flip-category="Blues">
-                                  <img class="scroll-image" src="{{ url('Packages/',$packages[5]->image) }}">
+                                  <img class="scroll-image" src="{{ url('vehicles/',$vehicles[5]->image) }}">
                               </li>
                             </a>
                           @endif
 
-                          @if(isset($packages[6]))
-                            <a href="{{ url('show-package',$packages[6]->id) }}">
+                          @if(isset($vehicles[6]))
+                            <a href="{{ url('show-package',$vehicles[6]->id) }}">
                               <li data-flip-title="Cyan" data-flip-category="Blues">
-                                  <img class="scroll-image" class="scroll-image" src="{{ url('Packages/',$packages[6]->image) }}">
+                                  <img class="scroll-image" class="scroll-image" src="{{ url('vehicles/',$vehicles[6]->image) }}">
                               </li>
                             </a>
                           @endif
 
-                          @if(isset($packages[7]))
-                            <a href="{{ url('show-package',$packages[7]->id) }}">
+                          @if(isset($vehicles[7]))
+                            <a href="{{ url('show-package',$vehicles[7]->id) }}">
                               <li data-flip-title="Robin's Egg" data-flip-category="Blues">
-                                  <img class="scroll-image" src="{{ url('Packages/',$packages[7]->image) }}">
+                                  <img class="scroll-image" src="{{ url('vehicles/',$vehicles[7]->image) }}">
                               </li>
                             </a>
                           @endif
 
-                          @if(isset($packages[8]))
-                            <a href="{{ url('show-package',$packages[8]->id) }}">
+                          @if(isset($vehicles[8]))
+                            <a href="{{ url('show-package',$vehicles[8]->id) }}">
                               <li data-flip-title="Deep Sea" data-flip-category="Greens">
-                                  <img class="scroll-image" src="{{ url('Packages/',$packages[8]->image) }}">
+                                  <img class="scroll-image" src="{{ url('vehicles/',$vehicles[8]->image) }}">
                               </li>
                             </a>
                           @endif
 
-                          @if(isset($packages[9]))
-                            <a href="{{ url('show-package',$packages[9]->id) }}">
+                          @if(isset($vehicles[9]))
+                            <a href="{{ url('show-package',$vehicles[9]->id) }}">
                               <li data-flip-title="Apple" data-flip-category="Greens">
-                                  <img class="scroll-image" src="{{ url('Packages/',$packages[9]->image) }}">
+                                  <img class="scroll-image" src="{{ url('vehicles/',$vehicles[9]->image) }}">
                               </li>
                             </a>
                           @endif
@@ -150,7 +160,7 @@
 
     <!-- Search Button -->
       <div class="col-md-12">
-        <a href="{{ url('search-package') }}"><button class="btn btn-primary btn-demo">Search more Packages </button></a>
+        <a href="{{ url('search-package') }}"><button class="btn btn-primary btn-demo">Search more vehicles </button></a>
       </div>
     <!-- End Search Button -->
 
@@ -162,10 +172,21 @@
             <h2>Reviews</h2>    
         </div>
 
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12" id="rate">
+            <h2>Rate: {{ ($rate) }}<div class="star-ratings-css pull-right">
+                      <div class="star-ratings-css-top" style="width:{{ $rate*100/5 }}%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                      <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    </div></h2>
+        </div>
+
         <div class="col-md-12 review">
             @foreach($reviews as $review)
                 <div class="col-md-12 margin15">
                     <h4><img src="{{ url('images/user.png') }}" class="review-image"> {{ $review->name }}</h4>
+                    <div class="star-ratings-css pull-right" style="margin:-40px;margin-right: 30px;">
+                      <div class="star-ratings-css-top" style="width:{{ $review->rate*100/5 }}%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                      <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    </div>
                     <div class="review-border">{{ $review->review }}</div>
                 </div>
             @endforeach
@@ -178,6 +199,19 @@
             <form method="post" action="{{ url('add-review') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
+                    <hr>
+                    <div class="col-md-3">
+                        <label>Rate Us : </label>
+                    </div>
+                    <div class="col-md-9">
+                        <fieldset class="rating col-md-6 col-md-offset-1" style="z-index: 1;">
+                            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                        </fieldset>
+                    </div>
 
                     <div class="col-sm-12">
                         <textarea class="textarea form-control marginBottom10" name="review" placeholder="Write a review..."></textarea>    

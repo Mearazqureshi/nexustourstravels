@@ -46,6 +46,12 @@
                     <div class="col-md-12">
                         <input name="hash" type="hidden" value="{{ $order_data['hash'] }}">
                     </div>
+                    <div class="col-md-12">
+                        <input name="udf1" type="hidden" value="{{ $order_data['udf1'] }}">
+                    </div>
+                    <div class="col-md-12">
+                        <input name="udf2" type="hidden" value="{{ $order_data['udf2'] }}">
+                    </div>
                 </form>
             </div>
         </div>

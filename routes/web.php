@@ -28,7 +28,7 @@ Route::get('/termsandcondition','HomeController@showTernsAndConditionPage');
 
 Route::get('/search-package','PackageController@showSearchPackagePage');
 
-Route::post('/search-package','PackageController@index');
+Route::post('/package-list','PackageController@index');
 
 Route::get('/show-package/{package_id}','PackageController@showPackage');
 
@@ -137,7 +137,10 @@ Route::post('sort_packages','PackageController@sortPackages');
 
 Route::get('show-book-package-page','PackageController@showBookPackagePage')->name('show-book-package-page');;
 
-Route::get('vehicle_orders','VehicleController@showOrderVehicles');
+Route::post('vehicle_orders','VehicleController@showOrderVehicles');
 
-Route::get('vehicle_fail_orders','VehicleController@showFailOrderVehicles');
+Route::post('vehicle_fail_orders','VehicleController@showFailOrderVehicles');
 
+Route::post('package_orders','PackageController@showOrderPackages');
+
+Route::post('package_fail_orders','PackageController@showFailOrderPackages');

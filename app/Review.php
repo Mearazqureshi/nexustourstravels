@@ -15,7 +15,7 @@ class Review extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_id', 'review',
+        'user_id', 'review', 'rate'
     ];
 
     public function user()

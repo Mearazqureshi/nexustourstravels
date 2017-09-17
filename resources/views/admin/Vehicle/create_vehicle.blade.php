@@ -73,7 +73,7 @@
 
                   </div>
 
-                  <div class="form-group">
+                 <!--  <div class="form-group">
 
                       <label class="col-sm-2 control-label marginBottom10">Basic Rent</label>
                       <div class="col-sm-10">
@@ -86,7 +86,7 @@
                       </div>
 
                   </div>
-
+ -->
                   <div class="form-group">
 
                       <label class="col-sm-2 control-label marginBottom10">Rent per KM</label>
@@ -112,6 +112,32 @@
                           @if($errors->first('category'))
                           <div class="alert alert-danger">
                             {{ $errors->first('category') }}
+                          </div>
+                          @endif
+                      </div>
+
+                  </div>
+
+                  <div class="form-group">
+
+                      <label class="col-sm-2 control-label marginBottom10">Rank</label>
+                      <div class="col-sm-10">
+                          <select name="rank" class="form-control marginBottom10">
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                          </select>
+                          @if($errors->first('rank'))
+                          <div class="alert alert-danger">
+                            {{ $errors->first('rank') }}
                           </div>
                           @endif
                       </div>

@@ -43,16 +43,16 @@
 
                 <div class="col-md-5 vehicle-information">
                     <h3>{{ $vehicle->name }}</h3>
-                   <!--  <p class="col-md-6"><b>Rate per KM: </b><i class="fa fa-inr"></i> {{ $vehicle->rent_per_km }}</p>
+                    <p class="col-md-6"><b>Rate per KM: </b><i class="fa fa-inr"></i> {{ $vehicle->rent_per_km }}</p>
                     <p class="col-md-6"><b>Number Of seat: </b>{{ $vehicle->no_of_seats }}</p>
                     <p class="col-md-6"><b>Vehicle type: </b>{{ $vehicle->type }}</p>
-                    <p class="col-md-6"><b>Category: </b>{{ $vehicle->category }}</p> -->
-                    <p><?php echo $vehicle->facilities; ?></p>
+                    <p class="col-md-6"><b>Category: </b>{{ $vehicle->category }}</p>
+                    <!-- <p><?php echo $vehicle->facilities; ?></p> -->
                 </div>
 
-                <div class="col-md-2 col-md-offset-1 search-package-last-column">
+                <div class="col-md-3 search-package-last-column">
                     <div class="col-md-12 package-price">
-                        <i class="fa fa-inr"></i><span> {{ $vehicle->basic_rent }}</span>
+                        Average : <i class="fa fa-inr"></i><span>{{ ($vehicle->rent_per_km*300) }}</span>(300KM)
                     </div>
 
                     <div class="col-md-12 btn-package">

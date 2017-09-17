@@ -15,7 +15,7 @@ class Vehicle extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'no_of_seats', 'type', 'basic_rent','rent_per_km','category','image','facilities',
+        'name', 'no_of_seats', 'type','rent_per_km','category','image','facilities','rank'
     ];
 
 }

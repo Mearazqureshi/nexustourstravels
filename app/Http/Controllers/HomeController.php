@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Package;
+use App\Vehicle;
 use Validator;
 use Mail;
 use Session;
@@ -28,9 +29,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['packages'] = Package::whereIn('rank',[1,2,3,4,5,6,7,8,9,10])->get();
+        $data['vehicles'] = Vehicle::whereIn('rank',[1,2,3,4,5,6,7,8,9,10])->get();
         $data['reviews'] = Review::join('users', 'reviews.user_id', '=', 'users.id')->orderBy('reviews.id','DESC')->with('user')->paginate(2);
-
+        $data['rate'] = Review::whereNotIn('rate',[0])->pluck('rate')->avg();
+        $data['rate'] = number_format($data['rate'],1);
         return view('home',$data);
     }
 

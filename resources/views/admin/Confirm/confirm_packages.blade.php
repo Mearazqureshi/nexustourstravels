@@ -47,6 +47,7 @@
                 <th> Source city </th>
                 <th> Departure city </th>
                 <th> Phone no </th>
+                <th> Payment Method</th>
                 <th> Total </th>
                 <th> Action </th>
               </tr>
@@ -66,6 +67,13 @@
                       <td>{{ $package->source_city }}</td>
                       <td>{{ $package->departure_city }}</td>
                       <td>{{ $package->contact_no }}</td>
+                      <td>@if($package->payment_status == 1)
+                          Offline
+                      @elseif($package->payment_status == 2)
+                          Half Payment
+                      @else
+                          Full Payment
+                      @endif</td>
                       <td>{{ $package->total }}</td>
                       <td><a href="{{ url('admin/cancel-package',$package->id) }}"><button class="btn-cancel">Cancel</button></a></td>
                   </tr>

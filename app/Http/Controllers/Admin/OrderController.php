@@ -30,7 +30,7 @@ class OrderController extends Controller
 
     public function showConfirmVehiclesList()
     {
-        $data['vehicles'] = BookVehicle::join('users','book_vehicles.user_id','users.id')->orderBy('book_vehicles.id','DESC')->with('vehicle')->where('book_vehicles.is_confirm','1')->paginate(Config::get('admin_side.list_items'));
+        $data['vehicles'] = BookVehicle::join('users','book_vehicles.user_id','users.id')->select('users.name','book_vehicles.*')->orderBy('book_vehicles.id','DESC')->with('vehicle')->where('book_vehicles.is_confirm','1')->paginate(Config::get('admin_side.list_items'));
         $data['book_vehicles_count'] = BookVehicle::where('is_confirm','1')->count();
 
         return view('admin.Confirm.confirm_vehicles',$data);

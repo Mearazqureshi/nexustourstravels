@@ -44,7 +44,7 @@
                 <th> Name </th>
                 <th> Type </th>
                 <th> No of seats </th>
-                <th> Basic rent </th>
+                <th> Rank </th>
                 <th> Rent per KM </th>
                 <th> Category </th>
                 <th> Action </th>
@@ -62,7 +62,7 @@
                       <td>{{ $vehicle->name }}</td>
                       <td>{{ $vehicle->type }}</td>
                       <td>{{ $vehicle->no_of_seats }}</td>
-                      <td>{{ $vehicle->basic_rent }}</td>
+                      <td>{{ $vehicle->rank }}</td>
                       <td>{{ $vehicle->rent_per_km }}</td>
                       <td>{{ $vehicle->category }}</td>
                       <td><a href="{{ url('admin/vehicle/edit',$vehicle->id) }}"><button class="btn-edit btn-primary btn-admin" style="float:none !important"><i class="fa fa-edit"></i></button></a> <button class="delete_vehicle btn-primary btn-delete pull-left" data-delete="{{ $vehicle->id }}" style="float:none !important" data-toggle="modal" data-target="#delete_image_model"><i class="fa fa-trash"></i></button>  </td>

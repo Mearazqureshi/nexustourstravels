@@ -177,8 +177,15 @@ class PackageController extends Controller
 
     public function bookPackageList()
     {
-        $data['packages'] = BookPackage::join('users','book_packages.user_id','users.id')->orderBy('book_packages.id','DESC')->with('package')->where('book_packages.is_confirm',0)->paginate(Config::get('admin_side.list_items'));
-        $data['book_packages_count'] = BookPackage::where('is_confirm',0)->count();
+        $data['packages'] = BookPackage::join('users','book_packages.user_id','users.id')
+                                        ->select('book_packages.*','users.name')
+                                        ->orderBy('book_packages.id','DESC')
+                                        ->with('package')->where('book_packages.is_confirm',0)
+                                        ->where('status',2)
+                                        ->where('payment_status',1)
+                                        ->paginate(Config::get('admin_side.list_items'));
+
+        $data['book_packages_count'] = BookPackage::where('is_confirm',0)->where('status',2)->where('payment_status',1)->count();
 
         return view('admin.BookPackage.index',$data);
     }

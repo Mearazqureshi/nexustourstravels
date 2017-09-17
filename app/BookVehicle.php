@@ -15,7 +15,7 @@ class BookVehicle extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'vehicle_id','no_of_days','user_id','total','hire_date','from','to','km','contact_no'
+        'vehicle_id','no_of_days','user_id','total','hire_date','from','to','km','contact_no','status','payment_status'
     ];
 
 

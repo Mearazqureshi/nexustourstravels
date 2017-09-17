@@ -22,9 +22,11 @@
                 </div>
 
             <div class="innerLine col-md-12">
-                <form method="post" action="{{ url('book-package') }}">
+                <form id="myForm" method="post" action="{{ url('book-package') }}">
                     {{ csrf_field() }}
                     <input type="hidden" name="package_id" value="{{ $package_id }}">
+                    <input type="hidden" name="source_city" value="{{ $package->from }}">
+                    <input type="hidden" name="departure_city" value="{{ $package->to }}">
                     <div class="form-group">
                         <div class="col-md-2">
                             <label>Name</label>
@@ -78,7 +80,7 @@
                         </div>
 
                         <div class="col-md-9">
-                            <input class="textbox-controll form-control" type="text" name="source_city" value="{{ old('source_city') or $package->from }}">
+                            <input class="textbox-controll form-control" type="text" name="source_city" value="{{ $package->from }}" disabled>
                             @if($errors->first('source_city'))
                               <div class="validation-error">
                                 {{ $errors->first('source_city') }}
@@ -94,7 +96,7 @@
                         </div>
 
                         <div class="col-md-9">
-                            <input class="textbox-controll form-control" type="text" name="departure_city" value="{{ old('departure_city') or $package->to }}"> 
+                            <input class="textbox-controll form-control" type="text" name="departure_city" value="{{ $package->to }}" disabled> 
                             @if($errors->first('departure_city'))
                               <div class="validation-error">
                                 {{ $errors->first('departure_city') }}
@@ -118,6 +120,32 @@
                             @endif
                         </div>
 
+                    </div>
+
+                    <div class="col-md-12 no-padding">
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label>Payment Method</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <input type="radio" name="payment_method" value="offline_payment" checked> Offline Payment
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="radio" name="payment_method" value="half_payment" id="half_payment"> 50% Payment
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="radio" name="payment_method" value="full_payment"> Full Payment
+                                </div>
+                                @if($errors->first('payment_method'))
+                                  <div class="validation-error">
+                                    {{ $errors->first('payment_method') }}
+                                  </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                     </div>
 
                     <div class="form-group">
@@ -148,20 +176,38 @@
 
 <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
 <script>
-    
+$(document).ready(function(){
     var price = "{{ $package->price }}";
-
+    var persons = $('#no_of_person').val();
+    
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',
         startDate: '-d'
     });
 
     $('#no_of_person').keyup(function(){
-        var persons = $('#no_of_person').val();
-
+        persons = $('#no_of_person').val();
         $('#total').val(persons * price);
     });
 
+    $('#myForm input').on('change', function() {
+        var count = 0;
+        var count2 = 0;
+        if($('input[name=payment_method]:checked', '#myForm').val() == 'half_payment'){
+            if(count==0){
+                $('#total').val($('#total').val()/2);
+                count++;
+            }
+        }
+        else{
+            if(count2==0){
+                persons = $('#no_of_person').val();
+                $('#total').val(persons * price);
+                count2++;
+            }
+        } 
+    });
+});
 </script>
 
 @endsection

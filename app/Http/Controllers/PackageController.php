@@ -57,7 +57,7 @@ class PackageController extends Controller
     {
         $data['package'] = Package::where('id',$package_id)->first();
         $data['package_images'] = PackageImage::where('package_id',$package_id)->get();
-
+        
         return view('package.show_package',$data);
     }
 
@@ -82,7 +82,13 @@ class PackageController extends Controller
 
         }
 
-        return Redirect::route('show-book-package-page')->with(['package_id' => $request->package_id]);
+        $data['user'] = User::where('id',$user_id)->first();
+        $data['package_id'] = $request->package_id;
+        $data['package'] = Package::where('id',$request->package_id)->first();
+
+        return view('package.show_package_confirmation',$data);
+
+        //return Redirect::route('show-book-package-page')->with(['package_id' => $request->package_id]);
     }
 
 
@@ -117,22 +123,82 @@ class PackageController extends Controller
                     ->withInput();
         } 
 
+        $user = Auth::user();
         $package = Package::where('id',$request->package_id)->first();
+        if($request->payment_method == 'half_payment'){
+            $total = $request->no_of_person * $package->price/2;
+        }
+        else{
+            $total = $request->no_of_person * $package->price;
+        } 
 
-        $total = $request->no_of_person * $package->price; 
+        if($request->payment_method == 'offline_payment')
+        {
+            BookPackage::create(['package_id' => $request->package_id,
+                                 'no_of_person' => $request->no_of_person,
+                                 'user_id' => Auth::user()->id,
+                                 'journey_date' => $request->journey_date,
+                                 'source_city' => $request->source_city,
+                                 'departure_city' => $request->departure_city,
+                                 'contact_no' => $request->contact_no,
+                                 'total' => $total,
+                                 'status' => 1,
+                                 'payment_status' => 1
+                                ]);
 
-        BookPackage::create(['package_id' => $request->package_id,
-                             'no_of_person' => $request->no_of_person,
-                             'user_id' => Auth::user()->id,
-                             'journey_date' => $request->journey_date,
-                             'source_city' => $request->source_city,
-                             'departure_city' => $request->departure_city,
-                             'contact_no' => $request->contact_no,
-                             'total' => $total
-                            ]);
+            Session::flash('flash_success','Your request has been sent. we will response you by email');
+            return redirect('all-packages');
+        }
+        else{
 
-        Session::flash('flash_success','Your request has been sent. we will response you by email');
-        return redirect('all-packages');
+            BookPackage::create(['package_id' => $request->package_id,
+                                 'no_of_person' => $request->no_of_person,
+                                 'user_id' => Auth::user()->id,
+                                 'journey_date' => $request->journey_date,
+                                 'source_city' => $request->source_city,
+                                 'departure_city' => $request->departure_city,
+                                 'contact_no' => $request->contact_no,
+                                 'total' => $total,
+                                 'status' => 1
+                                ]);
+
+            $book_package = BookPackage::where(['package_id' => $request->package_id,
+                                 'no_of_person' => $request->no_of_person,
+                                 'user_id' => Auth::user()->id,
+                                 'journey_date' => $request->journey_date,
+                                 'source_city' => $request->source_city,
+                                 'departure_city' => $request->departure_city,
+                                 'contact_no' => $request->contact_no,
+                                 'total' => $total,
+                                 'status' => 1
+                            ])->first();
+
+            $random_number = rand(0,9999);
+            $hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10|salt";
+            $hash_string = 'rjQUPktU|'.$random_number.'|'.$total.'|Book Package|'.$user->name.'|'.$user->email.'|'.$request->payment_method.'|'.$book_package->id.'|||||||||e5iIg1jwi8';
+
+            $hash = strtolower(hash('sha512', $hash_string));
+
+            $data['order_data'] = [
+                'key' => 'rjQUPktU',
+                'txnid' => $random_number,
+                'amount' => $total,
+                'productinfo' => 'Book Package',
+                'firstname' => $user->name,
+                'email' => $user->email,
+                'phone' => $request->contact_no,
+                'surl' => url('package_orders'),
+                'furl' => url('package_fail_orders'),
+                'service_provider' => 'payu_paisa',
+                'hash' => $hash,
+                'udf1' => $request->payment_method,
+                'udf2' => $book_package->id
+            ];
+
+            return view('payment.payment',$data);
+        }
+        // Session::flash('flash_success','Your request has been sent. we will response you by email');
+        // return redirect('all-packages');
 
     }
 
@@ -227,6 +293,35 @@ class PackageController extends Controller
         $data['packages'] = Package::where('from',$request->from)->where('to',$request->to)->orderBy('price',$request->sort_by)->orderBy('rate','DESC')->paginate(Config::get('user_side.package_list'));
 
         return $data['packages'];
+    }
+
+
+    public function showOrderPackages(Request $request){
+
+        if($request->udf1 == 'half_payment')
+        {
+            $payment_status = 2;
+        }
+        else if($request->udf1 == 'full_payment')
+        {
+            $payment_status = 3;
+        }
+
+        BookPackage::where('id',$request->udf2)->update(['payment_status' => $payment_status,'status' => 2,'is_confirm' => 1]);
+        $book_package = BookPackage::where('id',$request->udf2)->first();
+
+        $data = ['amount' => $request->amount,'firstname' => $request->firstname ,'email' => $request->email];
+
+        Mail::send('emails.payment_package', ['book_package' => $book_package,'data' => $data], function ($m) use ($data) {
+            $m->from(env('MAIL_USERNAME'),'Nexus tours travels');
+
+            $m->to($data['email'])
+
+            ->subject('Payment');
+        });
+        
+        Session::flash('flash_success','Package successfully booked.');
+        return back();
     }
 
 }

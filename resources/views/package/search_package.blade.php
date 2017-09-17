@@ -18,7 +18,7 @@
                     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 search-package">
                         <div class="col-md-12">
                             <h2>Search Package</h2>
-                            <form action="{{ url('search-package') }}" method="post">
+                            <form action="{{ url('package-list') }}" method="post">
                                 
                                 {{ csrf_field() }}
 

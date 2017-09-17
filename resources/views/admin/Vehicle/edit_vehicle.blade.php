@@ -79,20 +79,6 @@
 
                   <div class="form-group">
 
-                      <label class="col-sm-2 control-label marginBottom10">Basic Rent</label>
-                      <div class="col-sm-10">
-                          <input type="text" name="basic_rent" placeholder="Basic Rent" value="{{ $vehicle->basic_rent }}" class="form-control marginBottom10"  autofocus>
-                          @if($errors->first('basic_rent'))
-                          <div class="alert alert-danger">
-                            {{ $errors->first('basic_rent') }}
-                          </div>
-                          @endif
-                      </div>
-
-                  </div>
-
-                  <div class="form-group">
-
                       <label class="col-sm-2 control-label marginBottom10">Rent per KM</label>
                       <div class="col-sm-10">
                           <input type="text" name="rent_per_km" value="{{ $vehicle->rent_per_km }}" class="form-control marginBottom10"  autofocus>
@@ -120,6 +106,57 @@
                           @if($errors->first('category'))
                           <div class="alert alert-danger">
                             {{ $errors->first('category') }}
+                          </div>
+                          @endif
+                      </div>
+
+                  </div>
+
+                  <div class="form-group">
+
+                      <label class="col-sm-2 control-label marginBottom10">Rank</label>
+                      <div class="col-sm-10">
+                          <select class="form-control marginBottom10" name="rank">
+                              <option value="0"  @if($vehicle->rank == "0" )
+                                                      {{ "selected" }}
+                                                  @endif>0</option>
+                              <option value="1" @if($vehicle->rank == "1" )
+                                                          {{ "selected" }}
+                                                      @endif>1</option>
+                              <option value="2"  @if($vehicle->rank == "2" )
+                                                      {{ "selected" }}
+                                                  @endif>2</option>
+                              <option value="3" @if($vehicle->rank == "3" )
+                                                          {{ "selected" }}
+                                                      @endif>3</option>
+                              <option value="4"  @if($vehicle->rank == "4" )
+                                                      {{ "selected" }}
+                                                  @endif>4</option>
+                              <option value="5" @if($vehicle->rank == "5" )
+                                                          {{ "selected" }}
+                                                      @endif>5</option>
+                              <option value="6"  @if($vehicle->rank == "6" )
+                                                      {{ "selected" }}
+                                                  @endif>6</option>
+                              <option value="7" @if($vehicle->rank == "7" )
+                                                          {{ "selected" }}
+                                                      @endif>7</option>
+                              <option value="8"  @if($vehicle->rank == "8" )
+                                                      {{ "selected" }}
+                                                  @endif>8</option>
+                              <option value="9" @if($vehicle->rank == "9" )
+                                                          {{ "selected" }}
+                                                      @endif>9</option>
+                              <option value="10"  @if($vehicle->rank == "10" )
+                                                      {{ "selected" }}
+                                                  @endif>10</option>
+
+
+                          </select>
+
+                          @if($errors->first('rank'))
+                          <div class="alert alert-danger">
+                            {{ $errors->first('rank') }}
                           </div>
                           @endif
                       </div>

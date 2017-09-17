@@ -43,7 +43,6 @@ class VehicleController extends Controller
             'name' => 'required',
             'type' => 'required',
             'no_of_seats' => 'required|numeric',
-            'basic_rent' => 'required|numeric',
             'rent_per_km' => 'required|numeric',
             'category' => 'required',
             'image' => 'required',
@@ -66,11 +65,11 @@ class VehicleController extends Controller
                     'name' => $request->name,
                     'type' => $request->type,
                     'no_of_seats' => $request->no_of_seats,
-                    'basic_rent' => $request->basic_rent,
                     'rent_per_km' => $request->rent_per_km,
                     'category' => $request->category,
                     'image' => $fileName,
-                    'facilities' => $request->facilities
+                    'facilities' => $request->facilities,
+                    'rank' => $request->rank
                 ]);
 
         Session::flash('success_msg', 'Vehicle added Successfully..!');
@@ -93,7 +92,6 @@ class VehicleController extends Controller
             'name' => 'required',
             'type' => 'required',
             'no_of_seats' => 'required|numeric',
-            'basic_rent' => 'required|numeric',
             'rent_per_km' => 'required',
             'category' => 'required'
         ]); 
@@ -109,10 +107,10 @@ class VehicleController extends Controller
             'name' => $request->name,
             'type' => $request->type,
             'no_of_seats' => $request->no_of_seats,
-            'basic_rent' => $request->basic_rent,
             'rent_per_km' => $request->rent_per_km,
             'category' => $request->category,
-            'facilities' => $request->facilities
+            'facilities' => $request->facilities,
+            'rank' => $request->rank
         ];
 
         if($request->image){
@@ -126,6 +124,8 @@ class VehicleController extends Controller
             $data = array_merge($data,$image);
         }
         
+        Vehicle::where('rank',$request->rank)->update(['rank' => 0]);
+
         Vehicle::where('id',$vehicle_id)->update($data);
 
         Session::flash('success_msg', 'Vehicle updates Successfully..!');
@@ -144,8 +144,16 @@ class VehicleController extends Controller
 
     public function bookVehicleList()
     {
-        $data['vehicles'] = BookVehicle::join('users','book_vehicles.user_id','users.id')->orderBy('book_vehicles.id','DESC')->with('vehicle')->where('book_vehicles.is_confirm',0)->paginate(Config::get('admin_side.list_items'));
-        $data['book_vehicles_count'] = BookVehicle::where('is_confirm',0)->count();
+        $data['vehicles'] = BookVehicle::join('users','book_vehicles.user_id','users.id')
+                                        ->select('book_vehicles.*','users.name')
+                                        ->orderBy('book_vehicles.id','DESC')
+                                        ->with('vehicle')
+                                        ->where('book_vehicles.is_confirm',0)
+                                        ->where('status',2)
+                                        ->where('payment_status',1)
+                                        ->paginate(Config::get('admin_side.list_items'));
+
+        $data['book_vehicles_count'] = BookVehicle::where('is_confirm',0)->where('status',2)->where('payment_status',1)->count();
 
         return view('admin.BookVehicle.index',$data);
     }

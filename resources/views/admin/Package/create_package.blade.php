@@ -129,9 +129,9 @@
                               <option value="9">9</option>
                               <option value="10">10</option>
                           </select>
-                          @if($errors->first('to'))
+                          @if($errors->first('rank'))
                           <div class="alert alert-danger">
-                            {{ $errors->first('to') }}
+                            {{ $errors->first('rank') }}
                           </div>
                           @endif
                       </div>

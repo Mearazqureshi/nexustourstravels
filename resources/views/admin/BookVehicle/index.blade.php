@@ -47,6 +47,7 @@
                 <th> To </th>
                 <th> Killo meter </th>
                 <th> Phone no </th>
+                <th> Payment Method </th>
                 <th> Total </th>
                 <th> Action </th>
               </tr>
@@ -67,6 +68,15 @@
                       <td>{{ $vehicle->to }}</td>
                       <td>{{ $vehicle->km }}</td>
                       <td>{{ $vehicle->contact_no }}</td>
+                      <td>
+                      @if($vehicle->payment_status == 1)
+                          Offline
+                      @elseif($vehicle->payment_status == 2)
+                          Half Payment
+                      @else
+                          Full Payment
+                      @endif
+                      </td>
                       <td>{{ $vehicle->total }}</td>
                       <th><button data-toggle="modal" data-target="#delete_vehicle_model" class="btn-cancel delete_vehicle" data-delete="{{ $vehicle->id }}">Delete</button>  <a href="{{ url('admin/confirm-vehicle',$vehicle->id) }}"><button class="btn-confirm">Confirm</button></a> </th>
                   </tr>

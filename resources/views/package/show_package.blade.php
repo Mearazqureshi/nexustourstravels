@@ -2,6 +2,14 @@
 
 @section('content')
 
+<div class="col-md-12" style="z-index:5;background-color:#fff !important;padding-top:10px;">
+    @if(Session::get('flash_success'))
+      <div class="alert alert-success" role="alert">
+        <a class="alert-link" style="color:#fff;font-size:16px;">{{ Session::get('flash_success') }}</a>
+      </div>
+    @endif
+</div>
+
 <link href="{{ asset('css/rating.css') }}" rel="stylesheet">
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -71,7 +79,7 @@
         <div class="col-md-12 text-center">
           
           <div class="add-rating">
-            <h2>Rate Us</h2>
+            <h2>Rate Package</h2>
           </div>
 
           <form method="post" action="{{ url('package-confirm') }}" enctype="multipart/form-data">
