@@ -71,8 +71,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-heart"></i> Safar Tours & Travels!</h1>
-                  <p>©2017 All Rights Reserved By Safar Tours & Travels.</p>
+                  <h1><i class="fa fa-heart"></i> Nexus Tours Travels!</h1>
+                  <p>©2017 All Rights Reserved By Nexus Tours Travels.</p>
                 </div>
               </div>
             </form>
