@@ -160,7 +160,7 @@ body{
 
     <!-- Search Button -->
       <div class="col-md-12">
-        <a href="{{ url('search-package') }}"><button class="btn btn-primary btn-demo">Search more vehicles </button></a>
+        <a href="{{ url('vehicle-list') }}"><button class="btn btn-primary btn-demo">Search more vehicles </button></a>
       </div>
     <!-- End Search Button -->
 
