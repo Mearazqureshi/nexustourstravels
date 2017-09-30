@@ -25,9 +25,8 @@ body{
 
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
-                
-                <div class="item">
-                  <img src="{{ asset('images/home00.jpg') }}" alt="Los Angeles" class="slideImage">
+                <div class="item active">
+                  <img src="{{ asset('images/photo-1499678329028-101435549a4e.jpg') }}" alt="Los Angeles" class="slideImage">
                   <h2 class="home-image-text">GREAT JOURNEY</h2>
                 </div>
 
@@ -41,11 +40,10 @@ body{
                   <h2 class="home-image-text">GREAT JOURNEY</h2>
                 </div>
 
-                <div class="item active">
-                  <img src="{{ asset('images/photo-1499678329028-101435549a4e.jpg') }}" alt="Los Angeles" class="slideImage">
+                <div class="item">
+                  <img src="{{ asset('images/home00.jpg') }}" alt="Los Angeles" class="slideImage">
                   <h2 class="home-image-text">GREAT JOURNEY</h2>
                 </div>
-
               </div>
 
               <!-- Left and right controls -->
