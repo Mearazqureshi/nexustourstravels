@@ -170,10 +170,9 @@ class VehicleController extends Controller
 
     public function searchVehicle(Request $request)
     {
-        $data['vehicles'] = Vehicle::where('name',$request->vehicle_name)->get();
-        $data['vehicles_count'] = Vehicle::where('name',$request->vehicle_name)->count();
+        $data['vehicles'] = Vehicle::where('name','like',$request->vehicle_name.'%')->get(); 
+        $data['vehicles_count'] = Vehicle::where('name','like',$request->vehicle_name.'%')->count();
         
-
         return view('vehicle.index',$data);
     }
 
