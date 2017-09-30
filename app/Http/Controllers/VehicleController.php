@@ -44,13 +44,13 @@ class VehicleController extends Controller
         $data['user'] = User::where('id',Auth::user()->id)->first();
         $data['vehicle_id'] = $vehicle_id;
         $data['vehicle'] = Vehicle::where('id',$vehicle_id)->first();
-        // $booked_vehicle = BookVehicle::where('vehicle_id',$data['vehicle_id'])->whereNotIn('status',[1])->pluck('hire_date');
-
-        // foreach ($booked_vehicle as $key => $value) {
-        //     $data['booked_vehicle'][] = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('Y-m-d');
-        // }
+        $booked_vehicle = BookVehicle::where('vehicle_id',$data['vehicle_id'])->whereNotIn('status',[1])->pluck('hire_date');
+        $data['booked_vehicle'] = array();
+        foreach ($booked_vehicle as $key => $value) {
+            $data['booked_vehicle'][] = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('Y-m-d');
+        }
         
-        // $data['booked_vehicle'] = json_encode($data['booked_vehicle']);
+        $data['booked_vehicle'] = json_encode($data['booked_vehicle']);
 
         return view('vehicle.book_vehicle',$data);
     }
