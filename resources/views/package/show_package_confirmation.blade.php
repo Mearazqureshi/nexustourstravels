@@ -177,12 +177,14 @@
 <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
 <script>
 $(document).ready(function(){
+    var disabled_dates = '{!! $booked_packages !!}';
     var price = "{{ $package->price }}";
     var persons = $('#no_of_person').val();
     
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',
-        startDate: '-d'
+        startDate: '-d',
+        datesDisabled: disabled_dates,
     });
 
     $('#no_of_person').keyup(function(){

@@ -86,6 +86,22 @@ class PackageController extends Controller
         $data['package_id'] = $request->package_id;
         $data['package'] = Package::where('id',$request->package_id)->first();
 
+        $booked_packages = BookPackage::join('packages', 'packages.id', '=', 'book_packages.package_id')
+                                        ->select('book_packages.journey_date','packages.no_of_days')
+                                        ->where('package_id',$request->package_id)
+                                        ->whereNotIn('status',[1])
+                                        ->get();
+        $data['booked_packages'] = array();
+        
+        foreach ($booked_packages as $key => $booked_package) {
+            $data['booked_packages'][] = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $booked_package->journey_date)->format('Y-m-d');
+            for($i=0; $i <$booked_package->no_of_days ; $i++) {
+                $data['booked_packages'][] =  \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $booked_package->journey_date)->addDay($i)->format('Y-m-d');
+            }
+        }
+       
+        $data['booked_packages'] = json_encode($data['booked_packages']);
+
         return view('package.show_package_confirmation',$data);
 
         //return Redirect::route('show-book-package-page')->with(['package_id' => $request->package_id]);
@@ -142,7 +158,7 @@ class PackageController extends Controller
                                  'departure_city' => $request->departure_city,
                                  'contact_no' => $request->contact_no,
                                  'total' => $total,
-                                 'status' => 1,
+                                 'status' => 2,
                                  'payment_status' => 1
                                 ]);
 
