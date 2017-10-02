@@ -12,7 +12,7 @@
             <form method="post" action="{{ url('search-vehicle') }}">
                 {{ csrf_field() }}
                 <div class="col-md-7">
-                    <input type="text" name="vehicle_name" placeholder="Enter vehicle name" class="search-vehicle-textbox" required autofocus>
+                    <input type="text" name="vehicle_name" placeholder="Enter vehicle name" class="search-vehicle-textbox" required>
                 </div>
 
                 <div class="col-md-2">
