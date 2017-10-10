@@ -66,7 +66,7 @@ body{
                     <div id="coverflow">
                         <ul class="flip-items">
                           @if(isset($vehicles[0]))
-                            <a href="{{ url('show-package',$vehicles[0]->id) }}">
+                            <a href="{{ url('book-vehicle',$vehicles[0]->id) }}">
                               <li data-flip-title="Red">
                                   <img class="scroll-image" src="{{ url('Vehicles/',$vehicles[0]->image) }}">
                               </li>
@@ -74,7 +74,7 @@ body{
                           @endif
 
                           @if(isset($vehicles[1]))
-                            <a href="{{ url('show-package',$vehicles[1]->id) }}">
+                            <a href="{{ url('book-vehicle',$vehicles[1]->id) }}">
                               <li data-flip-title="Razzmatazz" data-flip-category="Purples">
                                   <img class="scroll-image" src="{{ url('Vehicles/',$vehicles[1]->image) }}">
                                </li>
@@ -82,7 +82,7 @@ body{
                           @endif
 
                           @if(isset($vehicles[2]))
-                            <a href="{{ url('show-package',$vehicles[2]->id) }}">
+                            <a href="{{ url('book-vehicle',$vehicles[2]->id) }}">
                               <li data-flip-title="Deep Lilac" data-flip-category="Purples">
                                   <img class="scroll-image" src="{{ url('Vehicles/',$vehicles[2]->image) }}">
                               </li>
@@ -90,7 +90,7 @@ body{
                           @endif
 
                           @if(isset($vehicles[3]))
-                            <a href="{{ url('show-package',$vehicles[3]->id) }}">
+                            <a href="{{ url('book-vehicle',$vehicles[3]->id) }}">
                               <li data-flip-title="Daisy Bush" data-flip-category="Purples">
                                   <img  class="scroll-image" src="{{ url('Vehicles/',$vehicles[3]->image) }}">
                               </li>
@@ -98,7 +98,7 @@ body{
                           @endif
 
                           @if(isset($vehicles[4]))
-                            <a href="{{ url('show-package',$vehicles[4]->id) }}">
+                            <a href="{{ url('book-vehicle',$vehicles[4]->id) }}">
                               <li data-flip-title="Cerulean Blue" data-flip-category="Blues">
                                   <img class="scroll-image" src="{{ url('Vehicles/',$vehicles[4]->image) }}">
                               </li>
@@ -106,7 +106,7 @@ body{
                           @endif
 
                           @if(isset($vehicles[5]))
-                            <a href="{{ url('show-package',$vehicles[5]->id) }}">
+                            <a href="{{ url('book-vehicle',$vehicles[5]->id) }}">
                               <li data-flip-title="Dodger Blue" data-flip-category="Blues">
                                   <img class="scroll-image" src="{{ url('Vehicles/',$vehicles[5]->image) }}">
                               </li>
@@ -114,7 +114,7 @@ body{
                           @endif
 
                           @if(isset($vehicles[6]))
-                            <a href="{{ url('show-package',$vehicles[6]->id) }}">
+                            <a href="{{ url('book-vehicle',$vehicles[6]->id) }}">
                               <li data-flip-title="Cyan" data-flip-category="Blues">
                                   <img class="scroll-image" class="scroll-image" src="{{ url('Vehicles/',$vehicles[6]->image) }}">
                               </li>
@@ -122,7 +122,7 @@ body{
                           @endif
 
                           @if(isset($vehicles[7]))
-                            <a href="{{ url('show-package',$vehicles[7]->id) }}">
+                            <a href="{{ url('book-vehicle',$vehicles[7]->id) }}">
                               <li data-flip-title="Robin's Egg" data-flip-category="Blues">
                                   <img class="scroll-image" src="{{ url('Vehicles/',$vehicles[7]->image) }}">
                               </li>
@@ -130,7 +130,7 @@ body{
                           @endif
 
                           @if(isset($vehicles[8]))
-                            <a href="{{ url('show-package',$vehicles[8]->id) }}">
+                            <a href="{{ url('book-vehicle',$vehicles[8]->id) }}">
                               <li data-flip-title="Deep Sea" data-flip-category="Greens">
                                   <img class="scroll-image" src="{{ url('Vehicles/',$vehicles[8]->image) }}">
                               </li>
@@ -138,7 +138,7 @@ body{
                           @endif
 
                           @if(isset($vehicles[9]))
-                            <a href="{{ url('show-package',$vehicles[9]->id) }}">
+                            <a href="{{ url('book-vehicle',$vehicles[9]->id) }}">
                               <li data-flip-title="Apple" data-flip-category="Greens">
                                   <img class="scroll-image" src="{{ url('Vehicles/',$vehicles[9]->image) }}">
                               </li>
