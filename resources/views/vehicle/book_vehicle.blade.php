@@ -46,10 +46,11 @@
                         <tr>
                             <td><b><h4>Category  </b></h4></td><td><h4> : {{ $vehicle->category }}</h4></td>
                         </tr>
-
-                        <tr>
-                            <td style="position:absolute;"><b><h4>Facilities  </b></h4></td><td><h4> : <?php echo $vehicle->facilities; ?></h4></td>
-                        </tr>
+                        @if($vehicle->facilities != '')
+                            <tr>
+                                <td style="position:absolute;"><b><h4>Facilities  </b></h4></td><td><h4> : <?php echo $vehicle->facilities; ?></h4></td>
+                            </tr>
+                        @endif
 
                     </table>
                 </div>
@@ -104,7 +105,7 @@
                         </div>
 
                         <div class="col-md-9">
-                            <input id="no_of_days" class="textbox-controll form-control" type="text" name="no_of_days" Placeholder="Number of days"  value="{{ old('no_of_days') }}">
+                            <input class="textbox-controll form-control" type="text" name="no_of_days" Placeholder="Number of days"  value="{{ old('no_of_days') }}">
                         
                             @if($errors->first('no_of_days'))
                               <div class="validation-error">
@@ -269,7 +270,7 @@ $(document).ready(function(){
         }
     });
 
-    $('#myForm input').on('change', function() {
+    $('#myForm input[name=payment_method]').on('change', function() {
         var count = 0;
         var count2 = 0;
         if($('input[name=payment_method]:checked', '#myForm').val() == 'half_payment'){
