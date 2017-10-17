@@ -11,7 +11,7 @@
         @endif
 </div>
 
-<iframe src="https://www.google.co.in/maps/place/Earth+Corporation/@23.2557861,69.668334,21z/data=!4m15!1m9!4m8!1m0!1m6!1m2!1s0x3950e20049f21251:0x95e3199aad3997e!2sEarth+Corporation,+107,+Katira+Complex,,+Ashapura+Ring+Road,+Bhuj,+Gujarat+370001!2m2!1d69.668319!2d23.255785!3m4!1s0x3950e20049f21251:0x95e3199aad3997e!8m2!3d23.255785!4d69.668319" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3665.6813349489985!2d69.6705741!3d23.2546804!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3950e2004b9205d3%3A0x35f2fa22d4969b80!2sNexus+Tours+Travels%2C+107+Katira+Commercial+complex%2C+Bhuj%2C+Gujarat+370001!5e0!3m2!1sen!2sin!4v1508227001727" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 <section class="darkSection">
   <div class="container">
