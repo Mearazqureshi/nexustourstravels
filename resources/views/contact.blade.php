@@ -11,7 +11,7 @@
         @endif
 </div>
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.6318234427627!2d69.67405241497214!3d23.256481184835085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3950e2046b5d6c15%3A0x1463af0511bc78d3!2sStation+Rd%2C+Bhuj%2C+Gujarat+370001!5e0!3m2!1sen!2sin!4v1494915483649" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe>
+<iframe src="https://www.google.co.in/maps/place/Earth+Corporation/@23.2557861,69.668334,21z/data=!4m15!1m9!4m8!1m0!1m6!1m2!1s0x3950e20049f21251:0x95e3199aad3997e!2sEarth+Corporation,+107,+Katira+Complex,,+Ashapura+Ring+Road,+Bhuj,+Gujarat+370001!2m2!1d69.668319!2d23.255785!3m4!1s0x3950e20049f21251:0x95e3199aad3997e!8m2!3d23.255785!4d69.668319" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe>
 
 <section class="darkSection">
   <div class="container">
@@ -23,9 +23,10 @@
           <div class="thumbnail">
             <h5>Address</h5>
             <address>
-              address line-1,<br>
-              address line-1,<br>
-              Bhuj-Kutch.
+              107, Katira commercial complex,<br>
+              Ashapura Ring Road,<br>
+              Bhuj kutch,<br>
+              370001.
             </address>
           </div>
         </div>

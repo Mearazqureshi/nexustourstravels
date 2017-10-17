@@ -121,10 +121,10 @@
         <div class="col-md-4 footer-slide1 no-padding">
             <h3>Get Touch with Us</h3>
             <ul class="footer-address">
-                <li>Address line-1,</li>
-                <li>Address line-2,</li>
-                <li>Address line-3,</li>
-                <li>Bhuj-Kutch</li>
+                <li>107, Katira commercial complex,</li>
+                <li>Ashapura Ring Road,</li>
+                <li>Bhuj kutch,</li>
+                <li>370001.</li>
             </ul>    
         </div>
         <div class="col-md-4 footer-slide2 no-padding">
