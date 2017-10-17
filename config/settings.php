@@ -2,8 +2,8 @@
 
     return [
 
-        'key' => 'jHC3D2S8',
-        'salt' => 'eo2XmmHxll',
+        'key' => 'paH7DXml',
+        'salt' => 'QlGpBU4K5K',
         'test_key' => 'rjQUPktU',
         'text_salt' => 'e5iIg1jwi8',
     ];

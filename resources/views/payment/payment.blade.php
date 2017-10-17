@@ -12,7 +12,7 @@
     <body onload="submitForm()">
         <div class="container">
             <div class="row">
-                <form name="postForm" method="POST" action="https://test.payu.in/_payment">
+                <form name="postForm" method="POST" action="https://secure.payu.in/_payment">
                     <div class="col-md-12">
                         <input name="key" type="hidden" value="{{ $order_data['key'] }}">
                     </div>
