@@ -146,7 +146,7 @@ class VehicleController extends Controller
 
             $random_number = rand(0,9999);
             $hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10|salt";
-            $hash_string = 'paH7DXml|'.$random_number.'|'.$total.'|Book Vehicle|'.$user->name.'|'.$user->email.'|'.$request->payment_method.'|'.$book_vehicle->id.'|||||||||QlGpBU4K5K';
+            $hash_string = 'paH7DXml|'.$random_number.'|'.$total.'|Book Vehicle|'.$user->name.'|'.$user->email.'|'.$request->payment_method.'|'.$book_vehicle->id.'|||||||||QIGpBU4K5K';
 
             $hash = strtolower(hash('sha512', $hash_string));
 
