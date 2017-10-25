@@ -144,3 +144,5 @@ Route::post('vehicle_fail_orders','VehicleController@showFailOrderVehicles');
 Route::post('package_orders','PackageController@showOrderPackages');
 
 Route::post('package_fail_orders','PackageController@showFailOrderPackages');
+
+Route::get('fail_orders','HomeController@failOrders');

@@ -88,4 +88,8 @@ class HomeController extends Controller
 
     }
 
+    public function failOrders(){
+        return view('fail_orders');
+    }
+
 }

@@ -159,7 +159,7 @@ class VehicleController extends Controller
                 'email' => $user->email,
                 'phone' => $request->contact_no,
                 'surl' => url('vehicle_orders'),
-                'furl' => url('vehicle_fail_orders'),
+                'furl' => url('fail_orders'),
                 'service_provider' => 'payu_paisa',
                 'hash' => $hash,
                 'udf1' => $request->payment_method,
