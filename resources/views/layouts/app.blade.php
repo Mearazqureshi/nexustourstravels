@@ -141,19 +141,19 @@
         <div class="col-md-4 footer-slide3 no-padding">
             <h3>Follow us on</h3>
             <div class="col-md-3 col-md-offset-4 social-links social-f">
-                <a><i class="fa fa-facebook"></i></a>
+                <a href="https://www.facebook.com/nexusholidayss/" target="_blank"><i class="fa fa-facebook"></i></a>
             </div>
 
             <div class="col-md-3 social-links">
-                <a><i class="fa fa-instagram"></i></a>
+                <a href="https://instagram.com/download/?r=6059096042" target="_blank"><i class="fa fa-instagram"></i></a>
             </div>
 
             <div class="col-md-3 col-md-offset-4 social-links">
-                <a><i class="fa fa-whatsapp"></i></a>
+                <a target="_blank"><i class="fa fa-whatsapp"></i></a>
             </div>
 
              <div class="col-md-3 social-links">
-                <a><i class="fa fa-twitter"></i></a>
+                <a href="https://twitter.com/nexustoursntrvl?s=08" target="_blank"><i class="fa fa-twitter"></i></a>
             </div>
         </div>
     </div>
